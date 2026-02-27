@@ -2,8 +2,9 @@ import { render } from '@testing-library/react';
 import Home from './page';
 
 describe('<Home />', () => {
-  it('should match snapshot', () => {
+  it('should render title', () => {
     const { container } = render(<Home />);
-    expect(container).matchSnapshot();
+
+    expect(container).toHaveTextContent('Pokedex Nextjs');
   });
 });
