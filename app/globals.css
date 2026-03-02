@@ -1,26 +1,51 @@
 @import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* === Paleta de Cores Customizada === */
+@theme {
+  /* Identidade */
+  --color-primary: #dc0a2d;
+  --color-secondary: #fff;
+
+  /* Pokémon Type Colors */
+  --color-bug: #a7b723;
+  --color-dark: #75746c;
+  --color-dragon: #7037ff;
+  --color-electric: #f9cf30;
+  --color-fairy: #ee99ac;
+  --color-fighting: #c12239;
+  --color-fire: #f57d31;
+  --color-flying: #a891ec;
+  --color-ghost: #70559b;
+  --color-normal: #aaa67f;
+  --color-grass: #74c648;
+  --color-ground: #dec16b;
+  --color-ice: #9ad6df;
+  --color-poison: #a43e9e;
+  --color-psychic: #fb5584;
+  --color-rock: #b69e31;
+  --color-steel: #b7b9d0;
+  --color-water: #6493eb;
+
+  /* Grayscale */
+  --color-dark-gray: #212121;
+  --color-medium-gray: #666666;
+  --color-light-gray: #e0e0e0;
+  --color-background: #efefef;
+  --color-white: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Você também pode definir dark mode aqui se quiser */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme {
+    /* Exemplo: inverter background/foreground no dark */
+    --color-background: #121212;
+    --color-dark-gray: #efefef;
   }
 }
 
+/* Aplica a fonte e background geral */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-dark-gray);
+  font-family: var(--font-sans);
 }
